@@ -5,8 +5,54 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Daftar_Pustaka"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="450" Width="600">
+    <Border Padding="10">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Margin="0 0 10 0">
+                <Button Content="Buku"/>
+                <Button Content="Bab/Halaman Bukur"/>
+                <Button Content="E-books"/>
+                <Button Content="Artikel Koran"/>
+                <Button Content="Artikel Koran Internet"/>
+                <Button Content="Jurnal"/>
+                <Button Content="Ensiklopedia Online"/>
+                <Button Content="Conference Proceedings"/>
+                <Button Content="Disertasi"/>
+                <Button Content="Ilustrasi"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1">
+                <!-- Penulis -->
+                <TextBlock x:Name="NamaPenulis_TextBlock" Text="Nama Penulis" FontWeight="Bold"/>
+                <TextBox x:Name="NamaPenulis_TextBox"/>
 
-    </Grid>
+                <!-- Judul Buku -->
+                <TextBlock x:Name="JudulBuku_TextBlock" Text="Judul Buku" FontWeight="Bold" Margin="0 10 0 0"/>
+                <TextBox x:Name="JudulBuku_TextBox"/>
+
+                <!-- Edisi Buku -->
+                <TextBlock x:Name="EdisiBuku_TextBlock" Text="Edisi Buku" FontWeight="Bold" Margin="0 10 0 0"/>
+                <TextBox/>
+
+                <!-- Kota Penerbit -->
+                <TextBlock x:Name="KotaPenerbit_TextBlock" Text="Kota Penerbit" FontWeight="Bold" Margin="0 10 0 0"/>
+                <TextBox x:Name="KotaPenerbit_TextBox"/>
+
+                <!--Nama Penerbit -->
+                <TextBlock x:Name="NamaPenerbit_TextBlock" Text="Nama Penerbit" FontWeight="Bold" Margin="0 10 0 0"/>
+                <TextBox x:Name="NamaPenerbit_TextBox"/>
+
+                <!-- Tahun Terbit -->
+                <TextBlock x:Name="TahunTerbit_TextBlock" Text="Tahun Terbit" FontWeight="Bold" Margin="0 10 0 0"/>
+                <TextBox/>
+
+                <TextBlock Text="Daftar Pustaka" FontWeight="Bold" Margin="0 20 0 0"/>
+                <TextBox Padding="40"/>
+            </StackPanel>
+        </Grid>
+
+    </Border>
 </Window>
