@@ -14,7 +14,10 @@
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0" Margin="0 0 10 0">
                 <Button Content="Buku"/>
-
+                <Button Content="E-Books"/>
+                <Button Content="Jurnal"/>
+                <Button Content="Tesis"/>
+                <Button Content="Lainnya"/>
             </StackPanel>
             <StackPanel Grid.Column="1">
                 <!-- Penulis -->
@@ -41,13 +44,25 @@
                 <TextBlock x:Name="TahunTerbit_TextBlock" Text="Tahun Terbit" FontWeight="Bold" Margin="0 10 0 0"/>
                 <TextBox x:Name="TahunTerbit_TextBox" TextChanged="Update_TextChanged"/>
 
+                <!-- Artikel -->
+                <TextBlock x:Name="Artikel_TextBlock" Text="Artikel" FontWeight="Bold" Margin="0 10 0 0" Visibility="Collapsed"/>
+                <TextBox x:Name="Artikel_TextBox" TextChanged="Update_TextChanged" Visibility="Collapsed"/>
+
                 <!-- Judul Buku -->
                 <TextBlock x:Name="JudulBuku_TextBlock" Text="Judul Buku" FontWeight="Bold" Margin="0 10 0 0"/>
                 <TextBox x:Name="JudulBuku_TextBox" TextChanged="Update_TextChanged"/>
 
                 <!-- Edisi Buku -->
-                <TextBlock x:Name="EdisiBuku_TextBlock" Text="Edisi Buku" FontWeight="Bold" Margin="0 10 0 0"/>
+                <TextBlock x:Name="EdisiBuku_TextBlock" Text="Edisi Buku (Opsional)" FontWeight="Bold" Margin="0 10 0 0"/>
                 <TextBox x:Name="EdisiBuku_TextBox" TextChanged="Update_TextChanged"/>
+
+                <!-- Bulan Terbit -->
+                <TextBlock x:Name="BulanTerbit_TextBlock" Text="Bulan Terbit" FontWeight="Bold" Margin="0 10 0 0" Visibility="Collapsed"/>
+                <TextBox x:Name="BulanTerbit_TextBox" TextChanged="Update_TextChanged" Visibility="Collapsed"/>
+
+                <!-- Halaman -->
+                <TextBlock x:Name="Halaman_TextBlock" Text="Halaman" FontWeight="Bold" Margin="0 10 0 0" Visibility="Collapsed"/>
+                <TextBox x:Name="Halaman_TextBox" TextChanged="Update_TextChanged" Visibility="Collapsed"/>
 
                 <!-- Tempat Terbit -->
                 <TextBlock x:Name="TempatTerbit_TextBlock" Text="Tempat Terbit" FontWeight="Bold" Margin="0 10 0 0"/>
@@ -56,6 +71,14 @@
                 <!--Nama Penerbit -->
                 <TextBlock x:Name="NamaPenerbit_TextBlock" Text="Nama Penerbit" FontWeight="Bold" Margin="0 10 0 0"/>
                 <TextBox x:Name="NamaPenerbit_TextBox" TextChanged="Update_TextChanged"/>
+
+                <!--Platform Penerbit -->
+                <TextBlock x:Name="PlatformPenerbit_TextBlock" Text="Platform Penerbit" FontWeight="Bold" Margin="0 10 0 0" Visibility="Collapsed"/>
+                <TextBox x:Name="PlatformPenerbit_TextBox" TextChanged="Update_TextChanged" Visibility="Collapsed"/>
+
+                <!-- Link -->
+                <TextBlock x:Name="Link_TextBlock" Text="Link" FontWeight="Bold" Margin="0 10 0 0" Visibility="Collapsed"/>
+                <TextBox x:Name="Link_TextBox" TextChanged="Update_TextChanged" Visibility="Collapsed"/>
 
                 <TextBlock Text="Daftar Pustaka" FontWeight="Bold" Margin="0 20 0 0"/>
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
@@ -67,11 +90,25 @@
                         <TextBlock x:Name="PustakaSemua" LineStackingStrategy="MaxHeight" TextWrapping="Wrap" Grid.Column="0">
                         <Run x:Name="PustakaNamaPenulis"/><Run x:Name="PustakaTahunTerbit"/><Run x:Name="PustakaJudulBuku" FontStyle="Italic"/><Run x:Name="PustakaEdisiBuku"/><Run x:Name="PustakaTempatTerbit"/><Run x:Name="PustakaNamaPenerbit"/>
                         </TextBlock>
-                        <Button x:Name="ButtonTambah" Content="Tambah Buku" Visibility="Hidden" Grid.Column="1" Margin="10 0 0 0"/>
+                        <Button x:Name="ButtonTambah" Click="ButtonTambah_Click" Content="Tambah Buku" Visibility="Hidden" Grid.Column="1" Margin="10 0 0 0"/>
                     </Grid>
                 </ScrollViewer>
+                <ScrollViewer VerticalScrollBarVisibility="Visible" Height="182">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <RichTextBox x:Name="DaftarPustaka" Grid.Column="0" IsReadOnly="True">
+                        </RichTextBox>
+                        <StackPanel x:Name="ButtonHapusSatu" Grid.Column="1">
+                            
+                        </StackPanel>
+                    </Grid>
+                </ScrollViewer>
+                <Button x:Name="HapusDaftarPustaka" Content="Clear" Click="HapusDaftarPustaka_Click" Visibility="Collapsed"/>
             </StackPanel>
         </Grid>
-
     </Border>
 </Window>
