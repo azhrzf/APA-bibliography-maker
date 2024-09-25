@@ -1,0 +1,24 @@
+# Visual Studio files
+.vscode/
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build files
+bin/
+obj/
+*.exe
+*.dll
+
+# Other
+*.log
+*.pdb
+*.cache
+*.dbmdl
+*.jfm
+
+# NuGet packages
+packages/
+*.nupkg
